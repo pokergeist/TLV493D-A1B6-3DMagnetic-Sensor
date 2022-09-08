@@ -46,7 +46,7 @@ typedef struct
 	uint8_t rw;
 	uint8_t byteAdress;
 	uint8_t bitMask;
-	uint8_t shift;
+	uint8_t shift; // SHR
 } RegMask_t;
 
 uint8_t getFromRegs(const RegMask_t *mask, uint8_t *regData);
