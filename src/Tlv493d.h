@@ -106,6 +106,7 @@ public:
 	// you need to capture and react(read the new results) to it by yourself
 	void enableInterrupt(void);
 	void disableInterrupt(void);
+	bool interruptEnabled(void);
 	// temperature measurement is enabled by default
 	// it can be disabled to reduce power consumption
 	void enableTemp(void);

@@ -127,6 +127,11 @@ void Tlv493d::disableInterrupt(void)
 	tlv493d::writeOut(&mInterface);
 }
 
+bool Tlv493d::interruptEnabled(void)
+{
+	return getRegBits(tlv493d::W_INT);
+}
+
 void Tlv493d::enableTemp(void)
 {
 	setRegBits(tlv493d::W_TEMP_NEN, 0);
