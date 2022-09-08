@@ -121,6 +121,10 @@ public:
 	float getX(void);
 	float getY(void);
 	float getZ(void);
+  
+  // get test mode flag to see if data is valid (read register 5)
+  // returns -1 if fast (short) reads are in effect
+  int8_t DataValid(void);
 	
 	// fieldvector in spherical coordinates
 	float getAmount(void);

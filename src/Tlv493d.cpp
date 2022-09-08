@@ -252,6 +252,14 @@ float Tlv493d::getTemp(void)
 	return static_cast<float>(mTempdata-TLV493D_TEMP_OFFSET) * TLV493D_TEMP_MULT;
 }
 
+int8_t Tlv493d::DataValid(void)
+{
+#ifdef TLV493D_ACCELERATE_READOUT
+  // there's no testmode flag data
+  if(mMode == FASTMODE) return -1; // no current data from read register 5
+#endif
+  return getRegBits(tlv493d::R_DIAG_TEST_MODE);
+}
 
 float Tlv493d::getAmount(void)
 {
