@@ -16,6 +16,7 @@ end	KEYWORD2
 setAccessMode	KEYWORD2
 enableInterrupt	KEYWORD2
 disableInterrupt	KEYWORD2
+interruptEnabled	KEYWORD2
 enableTemp	KEYWORD2
 disableTemp	KEYWORD2
 
@@ -25,6 +26,7 @@ updateData	KEYWORD2
 getX	KEYWORD2
 getY	KEYWORD2
 getZ	KEYWORD2
+dataValid	KEYWORD2
 getAmount	KEYWORD2
 getAzimuth	KEYWORD2
 getPolar	KEYWORD2
