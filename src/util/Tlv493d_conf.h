@@ -42,7 +42,6 @@
 #define TLV493D_STARTUPDELAY		40
 #define TLV493D_RESETDELAY			60
 
-#define TLV493D_NUM_OF_REGMASKS		25
 #define TLV493D_NUM_OF_ACCMODES		5
 
 #define TLV493D_MEASUREMENT_READOUT	7
@@ -93,7 +92,8 @@ enum Registers_e
 	W_PARITY_EN,
 	W_RES1,
 	W_RES2,
-	W_RES3
+	W_RES3,
+	LAST_REG_REF
 };
 
 const RegMask_t regMasks[] = {
@@ -136,5 +136,13 @@ const AccessMode_t accModes[] = {
 };
 
 }
+
+// was #define TLV493D_NUM_OF_REGMASKS		25
+// automate
+#define TLV493D_NUM_OF_REGMASKS sizeof(tlv493d::regMasks)/sizeof(tlv493d::RegMask_t)
+
+// verify at compile time that the number of masks match number of references
+static_assert(TLV493D_NUM_OF_REGMASKS == tlv493d::LAST_REG_REF,
+              "Mismatch of register masks and references.");
 
 #endif
